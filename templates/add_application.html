@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h1>Add Application</h1>
+    <p>Fill out the form below to add a new internship application.</p>
+</section>
+
+<section>
+    <form>
+        <div class="form-group">
+            <label for="role">Role Title:</label>
+            <input type="text" id="role" name="role" required>
+        </div>
+
+        <div class="form-group">
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" required>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option>Saved</option>
+                <option>Applied</option>
+                <option>Interview</option>
+                <option>Rejected</option>
+                <option>Offer</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes:</label>
+            <textarea id="notes" name="notes"></textarea>
+        </div>
+
+        <button type="submit">Save Application</button>
+    </form>
+</section>
+
+{% endblock %}
