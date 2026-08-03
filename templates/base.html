@@ -7,16 +7,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <ul>
-        <li><a href="{{url_for('home') }}">Home</a></li>
-        <li><a href="{{url_for('applications') }}">Applications</a></li>
-        <li><a href="{{url_for('add_application') }}">Add Application</a></li>
-        <li><a href="{{url_for('dashboard') }}">Dashboard</a></li>
-    </ul>
-
-    <main>
+    <nav class="navbar">
+        <h1>InternOS</h1>
+        <ul>
+            <li><a href="{{url_for('home') }}">Home</a></li>
+            <li><a href="{{url_for('applications') }}">Applications</a></li>
+            <li><a href="{{url_for('dashboard') }}">Dashboard</a></li>
+            <li><a class="addappbtn" href="{{url_for('add_application') }}">Add Application</a></li>
+        </ul>
+    </nav>
         {% block content %}
         {% endblock %}
-    </main>
 </body>
 </html>

@@ -1,0 +1,198 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+}
+
+/* Body styles */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for consistent padding and centering */
+
+.container {
+    width: 90%;
+    max-width: 90%;
+    margin: 32px auto;
+}
+
+/* Navbar styles */
+
+.navbar {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #201E1D;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar a {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 8px;
+}
+
+.navbar h1 {
+    color: #201E1D;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    color: #AE1800;
+    text-decoration: underline;
+}
+
+/* Button styles */
+.navbar .addappbtn, .button-group .addappbtn, .addappbtn a {
+    background-color: #DD2B0F;
+    color: #fff;
+    font-weight: bold; 
+    padding: 10px 14px;
+    text-decoration: none;
+}
+
+.navbar .addappbtn:hover, .button-group .addappbtn:hover {
+    color: #fff;
+    background-color: #AE1800;
+    text-decoration: none;
+}
+
+/* Home Page Styling */
+.main-index-section, .what-it-does {
+    border-bottom: 2px solid #201E1D;
+}
+
+.main-index-section .container, .what-it-does .container, .right-now .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-index-section h1{
+    font-size: 40px;
+    font-weight: bold;
+    max-width: 18ch;
+    text-wrap: balance;
+}
+
+.main-index-section .quote {
+    background-color: #FFF2EF;
+    color: #7C1405;
+    padding: 4px 8px;
+    width: fit-content;
+    font-size: 16px;
+}
+
+.main-index-section .description {
+    font-size: 20px;
+    text-wrap: balance;
+    max-width: 65ch;
+    color: #201E1D;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.button-group .viewdashboard, .right-now a {
+    color: #201E1D;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #000;
+    padding: 10px 14px;
+}
+
+.right-now {
+    border-bottom: 1px solid #201E1D;
+}
+
+.right-now .application-amount{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-now p, .what-it-does p {
+    font-size: 14px;
+    color: #201E1D;
+}
+
+.right-now h2 {
+    font-size: 26px;
+    font-weight: lighter;
+}
+
+.footer {
+    text-align: center;
+    margin: 16px auto;
+    font-size: 14px;
+}
+
+/* Table Desgin */
+.what-it-does table {
+    background-color: #EAE9E9;
+    border-top: 2px solid #000;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.what-it-does td:nth-child(1),
+.what-it-does td:nth-child(2),
+.what-it-does th:nth-child(1),
+.what-it-does th:nth-child(2) {
+    border-right: 2px solid #000;
+}
+
+.what-it-does .red-count {
+    color: #EC3013;
+    font-size: 14px;
+}
+
+.what-it-does th {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px 14px;
+}
+
+.what-it-does td {
+    padding: 0px 14px;
+}
+
+.what-it-does th, .what-it-does td {
+    padding: 5px 14px;
+}
+
+.what-it-does tbody {
+    font-size: 16px;
+    max-width: 42ch;
+    text-wrap: balance;
+}
+
+/* Responsive design */
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+    }
+}

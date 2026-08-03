@@ -1,22 +1,59 @@
 {% extends "base.html" %}
 
 {% block content %}
+<main>
+    <section class = "main-index-section">
+        <div class = "container">
+            <p class = "quote">Internship Tracker & Skill Gap Analyser</p>
+            <h1>Every application, one place. Every gap, visible.</h1>
+            <p class = "description">InternOS tracks your internship pipeline from Saved to Offer, and compares job descriptions against your own skills so you know exactly what to build next.</p>
+            <div class = "button-group">
+                <a class = "addappbtn" href="{{url_for('add_application') }}">Add your first application</a>
+                <a class = "viewdashboard" href="{{url_for('dashboard') }}">View Dashboard</a>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h1>Welcome to InternOS</h1>
-    <p>Your one-stop solution for managing internship applications and tracking your progress.</p>
+    <section class = "what-it-does">
+        <div class = "container">
+            <p>WHAT IT DOES</p>
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">01 - TRACK</td>
+                        <td scope="col">02 - ANALYSE</td>
+                        <td scope="col">03 - IMPROVE</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Every stage, tracked</th>
+                        <th scope="col">Spot the skill gap</th>
+                        <th scope="col">Know what to build</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company, role, deadline and status — Saved through Offer — in one running list instead of scattered tabs.</td>
+                            <td>Paste a job description and see which required skills you already have, and which ones are missing.</td>
+                            <td>Missing skills map to suggested projects, so the gap turns into a concrete next step.</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </div>
+    </section>
 
-    <a href="{{url_for('applications')}}">View Applications</a>
-    <a href="{{url_for('add_application')}}">Add Application</a>
-</section>
+    <section class = "right-now">
+        <div class = "container">
+            <p>RIGHT NOW</p>
+            <div class = "application-amount">
+                <h2>(NUMBER) applications in the pipeline</h2>
+                <a href="{{url_for('applications') }}">Applications</a>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Why Choose InternOS?</h2>
-    <ul>
-        <li>Organize all your internship applications in one place.</li>
-        <li>Track the status of each application with ease.</li>
-        <li>Get insights and analytics on your application history.</li>
-    </ul>
-</section>
+    <section class = "footer">
+            <footer>InternOS</footer>
+    </section>
+</main>
 
-{% endblock %}
+{%endblock %}
