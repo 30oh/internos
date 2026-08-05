@@ -2,46 +2,69 @@
 
 {% block content %}
 
-<section>
-    <h1>Add Application</h1>
-    <p>Fill out the form below to add a new internship application.</p>
-</section>
-
-<section>
-    <form>
-        <div class="form-group">
-            <label for="role">Role Title:</label>
-            <input type="text" id="role" name="role" required>
+    <section class = "main-add-application-section">
+        <div class = "container">
+            <p class = "new-entry">NEW ENTRY</p>
+            <h1>Add Application</h1>
         </div>
+    </section>
 
-        <div class="form-group">
-            <label for="company">Company Name:</label>
-            <input type="text" id="company" name="company" required>
+    <section class = "add-application-form">
+        <div class = "container">
+            <form>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="e.g. Northwind Analytics" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" name="role" placeholder="e.g. Data Analyst Intern" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" placeholder="e.g. Remote/London" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="jobURL">Job URL</label>
+                    <input type="text" id="jobURL" name="jobURL" placeholder="https://" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" id="deadline" name="deadline" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status" required>
+                        <option>Saved</option>
+                        <option>Applied</option>
+                        <option>Online Assessment</option>
+                        <option>Interview</option>
+                        <option>Offer</option>
+                        <option>Rejected</option>
+                        <option>Withdrawn</option>
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="jobDesc">Job Description</label>
+                    <textarea id="jobDesc" name="jobDesc" placeholder="Paste the job description here" rows="5"></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" placeholder="Anything worth remembering - referral, recruiter name, next step" rows="5"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="save-application">Save Application</button>
+                    <button type="reset" class="cancel">Cancel</button>
+                </div>
+            </form>
         </div>
-
-        <div class="form-group">
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
-        </div>
-
-        <div class="form-group">
-            <label for="status">Status:</label>
-            <select id="status" name="status" required>
-                <option>Saved</option>
-                <option>Applied</option>
-                <option>Interview</option>
-                <option>Rejected</option>
-                <option>Offer</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="notes">Notes:</label>
-            <textarea id="notes" name="notes"></textarea>
-        </div>
-
-        <button type="submit">Save Application</button>
-    </form>
-</section>
+    </section>
 
 {% endblock %}

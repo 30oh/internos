@@ -7,6 +7,19 @@ p, h1, h2, h3 {
     margin: 0;
 }
 
+input, select, textarea, button {
+    appearance: none;          /* strips OS-native rendering */
+    -webkit-appearance: none;  /* Safari still needs the prefix */
+    font-family: inherit;      /* form controls don't inherit fonts by default */
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+}
+
 /* Body styles */
 
 body {
@@ -61,7 +74,7 @@ body {
 }
 
 /* Button styles */
-.navbar .addappbtn, .button-group .addappbtn, .addappbtn a {
+.navbar .addappbtn, .button-group .addappbtn, .addappbtn a, .save-application {
     background-color: #DD2B0F;
     color: #fff;
     font-weight: bold; 
@@ -69,7 +82,7 @@ body {
     text-decoration: none;
 }
 
-.navbar .addappbtn:hover, .button-group .addappbtn:hover {
+.navbar .addappbtn:hover, .button-group .addappbtn:hover, .save-application:hover {
     color: #fff;
     background-color: #AE1800;
     text-decoration: none;
@@ -188,6 +201,68 @@ body {
 
 .dashboard-statistics {
     border-bottom: 2px solid #000;
+}
+
+/* Add Application Styling */
+
+.add-application-form {
+    border-bottom: 2px solid #000;
+}
+
+.main-add-application-section .container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #000;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.add-application-form {
+    padding-bottom: 20px;
+    gap: 16px;
+    padding-top: 10px;
+}
+
+.add-application-form form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.add-application-form label {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.add-application-form input, .add-application-form select, .add-application-form textarea {
+    background-color: #EAE9E9;
+    width: 100%;
+    border: 2px solid #000;
+}
+
+.add-application-form input, .add-application-form select {
+    padding: 10px 10px;
+}
+
+.add-application-form textarea {
+    padding: 10px;
+}
+
+.add-application-form .full-width, .add-application-form .form-actions {
+    grid-column: 1 / -1;
+}
+
+.add-application-form .form-actions {
+    padding-top: 10px;
+    display: flex;
+    gap: 16px;
+}
+
+.add-application-form .cancel {
+    color: #EC3013;
+    font-weight: bold;
 }
 
 /* Table Desgin */
