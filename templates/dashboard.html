@@ -1,33 +1,153 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<section>
-    <h1>Dashboard</h1>
-    <p>Welcome to your dashboard! Here you can get an overview of your internship applications and track your progress.</p>
-</section>
-
-<section>
-    <div class="dashboard-grid">
-        <div class="stat-card">
-            <h2>3</h2>
-            <p>Total Applications</p>
+<main>
+    <section class = "main-dashboard-section">
+        <div class = "container">
+                <h1>Dashboard</h1>
         </div>
+    </section>
 
-         <div class="stat-card">
-            <h2>1</h2>
-            <p>Interviews</p>
+    <section class = "dashboard-statistics">
+        <div class = "container">
+            <table class = "main-table">
+                <thead>
+                    <tr>
+                        <th scope="col">TOTAL APPLICATIONS</th>
+                        <th scope="col">RESPONSE RATE</th>
+                        <th scope="col">NEXT DEADLINE</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="col">?</td>
+                            <td class = "response-percentage" scope="col">%</td>
+                            <td scope="col">DATE</td>
+                        </tr>
+                    </tbody>
+            </table>
+            <div class = "statistics">
+                <table class = "statistics-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">BY STATUS</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class = "status-count">
+                                        <p>Saved</p>
+                                        <p>?</p>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class = "status-count">
+                                        <p>Saved</p>
+                                        <p>?</p>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class = "status-count">
+                                        <p>Saved</p>
+                                        <p>?</p>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class = "status-count">
+                                        <p>Saved</p>
+                                        <p>?</p>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class = "status-count">
+                                        <p>Saved</p>
+                                        <p>?</p>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class = "status-count">
+                                        <p>Saved</p>
+                                        <p>?</p>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+                <table class = "deadlines-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">UPCOMING DEADLINES</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr class = "deadlines">
+                                <td>
+                                    <div>
+                                        <p><strong>COMPANY NAME</strong></p>
+                                        <p>DATE</p>
+                                    </div>
+                                    <p class = "internship-type">INTERNSHIP TYPE</p>
+                                </td>
+                            </tr>
+                            <tr class = "deadlines">
+                                <td>
+                                    <div>
+                                        <p><strong>COMPANY NAME</strong></p>
+                                        <p>DATE</p>
+                                    </div>
+                                    <p class = "internship-type">INTERNSHIP TYPE</p>
+                                </td>
+                            </tr><tr class = "deadlines">
+                                <td>
+                                    <div>
+                                        <p><strong>COMPANY NAME</strong></p>
+                                        <p>DATE</p>
+                                    </div>
+                                    <p class = "internship-type">INTERNSHIP TYPE</p>
+                                </td>
+                            </tr><tr class = "deadlines">
+                                <td>
+                                    <div>
+                                        <p><strong>COMPANY NAME</strong></p>
+                                        <p>DATE</p>
+                                    </div>
+                                    <p class = "internship-type">INTERNSHIP TYPE</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
         </div>
-
-         <div class="stat-card">
-            <h2>0</h2>
-            <p>Offers</p>
-        </div>
-</section>
-
-<section class="card">
-    <h2>Future dashboard features</h2>
-    <p>Stay tuned for more exciting features coming soon!</p>
-</section>
+    </section>
+</main>
 
 {%endblock %}

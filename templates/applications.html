@@ -1,35 +1,159 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<section>
-    <h1>My Applications</h1>
-    <p>Welcome to your applications page! Here you can find all the applications you have submitted.</p>
-</section>
-
-<section>
-    <div class="applications-list">
-        <div class="application-card">
-            <h2>Role Title</h2>
-            <p><strong>Company:</strong> Company Name</p>
-            <p><strong>Status:</strong> Application Status</p>
-            <p><strong>Location:</strong> Location</p>
+<main>
+    <section class = "main-application-section">
+        <div class = "container">
+            <p class = "application-amount">? TOTAL</p>
+            <div class = "button-group">
+                <h1>Applications</h1>
+                <a class = "addappbtn" href="{{url_for('add_application') }}">Add application</a>
+            </div>
         </div>
+    </section>
 
-        <div class="application-card">
-            <h2>Role Title 2</h2>
-            <p><strong>Company:</strong> Company Name</p>
-            <p><strong>Status:</strong> Application Status</p>
-            <p><strong>Location:</strong> Location</p>
+    <section class = "application-cards">
+        <div class = "container">
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">LOCATION</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internship Type</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company</td>
+                        </tr>
+                        <tr class = "table-status">
+                            <td>
+                                <div class = "status-date">
+                                    <p class = "status">STATUS</p>
+                                    <p class = "date">DATE</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">LOCATION</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internship Type</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company</td>
+                        </tr>
+                        <tr class = "table-status">
+                            <td>
+                                <div class = "status-date">
+                                    <p class = "status">STATUS</p>
+                                    <p class = "date">DATE</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">LOCATION</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internship Type</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company</td>
+                        </tr>
+                        <tr class = "table-status">
+                            <td>
+                                <div class = "status-date">
+                                    <p class = "status">STATUS</p>
+                                    <p class = "date">DATE</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">LOCATION</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internship Type</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company</td>
+                        </tr>
+                        <tr class = "table-status">
+                            <td>
+                                <div class = "status-date">
+                                    <p class = "status">STATUS</p>
+                                    <p class = "date">DATE</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">LOCATION</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internship Type</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company</td>
+                        </tr>
+                        <tr class = "table-status">
+                            <td>
+                                <div class = "status-date">
+                                    <p class = "status">STATUS</p>
+                                    <p class = "date">DATE</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr class = "red-count">
+                        <td scope="col">LOCATION</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Internship Type</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company</td>
+                        </tr>
+                        <tr class = "table-status">
+                            <td>
+                                <div class = "status-date">
+                                    <p class = "status">STATUS</p>
+                                    <p class = "date">DATE</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+            </table>
         </div>
+    </section>
+</main>
 
-        <div class="application-card">
-            <h2>Role Title 3</h2>
-            <p><strong>Company:</strong> Company Name</p>
-            <p><strong>Status:</strong> Application Status</p>
-            <p><strong>Location:</strong> Location</p>
-        </div>
-    </div>
-</section>
-
-{% endblock %}
+{%endblock %}
