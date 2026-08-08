@@ -4,7 +4,7 @@
 <main>
     <section class = "main-application-section">
         <div class = "container">
-            <p class = "application-amount">? TOTAL</p>
+            <p class = "application-amount">{{ applications|length }} TOTAL</p>
             <div class = "button-group">
                 <h1>Applications</h1>
                 <a class = "addappbtn" href="{{url_for('add_application') }}">Add application</a>
@@ -14,144 +14,37 @@
 
     <section class = "application-cards">
         <div class = "container">
+            {% for card in applications %}
             <table>
                 <thead>
                     <tr class = "red-count">
-                        <td scope="col">LOCATION</td>
+                        <td scope="col">{{card.location}}</td>
                     </tr>
                     <tr>
-                        <th scope="col">Internship Type</th>
+                        <th scope="col">{{card.role}}</th>
                     </tr>
                 </thead>
                     <tbody>
                         <tr>
-                            <td>Company</td>
+                            <td>{{card.company}}</td>
                         </tr>
                         <tr class = "table-status">
                             <td>
                                 <div class = "status-date">
-                                    <p class = "status">STATUS</p>
-                                    <p class = "date">DATE</p>
+                                    <p class = "status">{{card.status}}</p>
+                                    <p class = "date">{{card.deadline}}</p>
                                 </div>
                             </td>
                         </tr>
                     </tbody>
             </table>
-            <table>
-                <thead>
-                    <tr class = "red-count">
-                        <td scope="col">LOCATION</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Internship Type</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                            <td>Company</td>
-                        </tr>
-                        <tr class = "table-status">
-                            <td>
-                                <div class = "status-date">
-                                    <p class = "status">STATUS</p>
-                                    <p class = "date">DATE</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-            </table>
-            <table>
-                <thead>
-                    <tr class = "red-count">
-                        <td scope="col">LOCATION</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Internship Type</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                            <td>Company</td>
-                        </tr>
-                        <tr class = "table-status">
-                            <td>
-                                <div class = "status-date">
-                                    <p class = "status">STATUS</p>
-                                    <p class = "date">DATE</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-            </table>
-            <table>
-                <thead>
-                    <tr class = "red-count">
-                        <td scope="col">LOCATION</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Internship Type</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                            <td>Company</td>
-                        </tr>
-                        <tr class = "table-status">
-                            <td>
-                                <div class = "status-date">
-                                    <p class = "status">STATUS</p>
-                                    <p class = "date">DATE</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-            </table>
-            <table>
-                <thead>
-                    <tr class = "red-count">
-                        <td scope="col">LOCATION</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Internship Type</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                            <td>Company</td>
-                        </tr>
-                        <tr class = "table-status">
-                            <td>
-                                <div class = "status-date">
-                                    <p class = "status">STATUS</p>
-                                    <p class = "date">DATE</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-            </table>
-            <table>
-                <thead>
-                    <tr class = "red-count">
-                        <td scope="col">LOCATION</td>
-                    </tr>
-                    <tr>
-                        <th scope="col">Internship Type</th>
-                    </tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                            <td>Company</td>
-                        </tr>
-                        <tr class = "table-status">
-                            <td>
-                                <div class = "status-date">
-                                    <p class = "status">STATUS</p>
-                                    <p class = "date">DATE</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-            </table>
+            {% else %}
+                <div class = "empty-applications">
+                        <h1>No applications yet</h1>
+                        <p>Once you add a role you're tracking, it'll show up here with its status and deadline.</p>
+                        <a class = "addappbtn" href="{{url_for('add_application') }}">Add your first application</a>
+                </div>
+            {% endfor %}
         </div>
     </section>
 </main>
