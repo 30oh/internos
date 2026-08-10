@@ -1,9 +1,17 @@
-from flask import Flask, request, render_template, redirect, url_for, flash
+from datetime import date
+
+from flask import Flask, flash, redirect, render_template, request, url_for
+
+from config import Config
+from models import Application, db
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/' # Change this so its not public knowledge
+app.config.from_object(Config)
 
-applications_stored = []
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
 
 @app.route("/")
 def home():
@@ -12,24 +20,29 @@ def home():
 
 @app.route("/applications")
 def applications():
-    return render_template("applications.html", applications = applications_stored)
+    applications = db.session.execute(db.select(Application)).scalars().all()
+    return render_template("applications.html", applications = applications)
 
 
 @app.route("/add-application", methods=["GET", "POST"])
 def add_application():
     if request.method == "POST":
-        applications_stored.append({
-            "company": request.form.get("company"),
-            "role": request.form.get("role"),
-            "location": request.form.get("location"),
-            "jobURL": request.form.get("jobURL"),
-            "deadline": request.form.get("deadline"),
-            "status": request.form.get("status"),
-            "jobDesc": request.form.get("jobDesc"),
-            "notes": request.form.get("notes")
-        })
+        deadline_raw = request.form.get("deadline")
+        deadline = date.fromisoformat(deadline_raw) if deadline_raw else None
+        
+        application = Application(
+            company = request.form.get("company"),
+            role = request.form.get("role"),
+            location = request.form.get("location"),
+            job_url = request.form.get("job_url"),
+            deadline = deadline,
+            status = request.form.get("status"),
+            job_desc = request.form.get("job_desc"),
+            notes = request.form.get("notes")
+        )
+        db.session.add(application)
+        db.session.commit()
         flash('Saved', "success")
-        #print(applications_stored)
         return redirect(url_for('applications'))
     return render_template("add_application.html")
 
