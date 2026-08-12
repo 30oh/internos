@@ -24,6 +24,15 @@ def applications():
     return render_template("applications.html", applications = applications)
 
 
+@app.route("/applications/<int:id>/delete", methods=["POST"])
+def delete_application(id):
+    application = db.get_or_404(Application, id)
+    db.session.delete(application)
+    db.session.commit()
+    flash('Deleted', "success")
+    return redirect(url_for("applications"))
+
+
 @app.route("/add-application", methods=["GET", "POST"])
 def add_application():
     if request.method == "POST":

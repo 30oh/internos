@@ -74,7 +74,7 @@ body {
 }
 
 /* Button styles */
-.navbar .addappbtn, .button-group .addappbtn, .addappbtn a, .save-application, .application-cards .addappbtn {
+.navbar .addappbtn, .button-group .addappbtn, .addappbtn a, .save-application, .application-cards .addappbtn, .application-cards .delete-button {
     background-color: #DD2B0F;
     color: #fff;
     font-weight: bold; 
@@ -82,7 +82,7 @@ body {
     text-decoration: none;
 }
 
-.navbar .addappbtn:hover, .button-group .addappbtn:hover, .save-application:hover , .application-cards .addappbtn:hover {
+.navbar .addappbtn:hover, .button-group .addappbtn:hover, .save-application:hover , .application-cards .addappbtn:hover, .application-cards .delete-button:hover {
     color: #fff;
     background-color: #AE1800;
     text-decoration: none;
@@ -190,6 +190,39 @@ body {
     gap: 10px;
     justify-content: space-between;
     padding-bottom: 20px;
+}
+
+.application-cards .edit-delete-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.application-cards .edit-delete-buttons button {
+    color: #000;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.application-cards .edit-delete-buttons button:hover {
+    background-color: #FFF2EF;
+    color: #AE1800;
+    border: 2px solid #000;
+}
+
+.application-cards dialog[open] {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.application-cards dialog[open] .cancel-button:hover {
+    text-decoration: underline;
 }
 
 .empty-applications {
@@ -325,7 +358,7 @@ body {
     gap: 20px;
 }
 
-.application-cards table{
+.application-cards table {
     background-color: #EAE9E9;
     text-align: left;
     padding: 10px 0px;
@@ -353,6 +386,11 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.application-cards dialog table {
+    width: 100%;
+}
+
 
 .dashboard-statistics .main-table {
     border: 2px solid #000;

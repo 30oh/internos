@@ -14,11 +14,46 @@
 
     <section class = "application-cards">
         <div class = "container">
+            {% macro application_card(card) %}
+                <table>
+                    <thead>
+                        <tr class = "red-count">
+                            <td>{{card.location}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="col">{{card.role}}</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{card.company}}</td>
+                            </tr>
+                            <tr class = "table-status">
+                                <td>
+                                    <div class = "status-date">
+                                        <p class = "status">{{card.status}}</p>
+                                        <p class = "date">{{card.deadline}}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+            {% endmacro %}
+
             {% for card in applications %}
             <table>
                 <thead>
                     <tr class = "red-count">
-                        <td scope="col">{{card.location}}</td>
+                        <td>
+                            <div class = "edit-delete-buttons">
+                                <p>{{card.location}}</p>
+                                <button type="button" aria-label="Delete application at {{ card.company }}" onclick="document.getElementById('confirm-{{ card.id }}').showModal()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" aria-hidden="true">
+                                        <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th scope="col">{{card.role}}</th>
@@ -38,6 +73,19 @@
                         </tr>
                     </tbody>
             </table>
+            <dialog id="confirm-{{ card.id }}">
+                <h1>Delete this application?</h1>
+                <p>This permanently removes the record below. This can't be undone.</p>
+                {{ application_card(card) }}
+                <div class="button-group">
+                    <form method="post" action="{{ url_for('delete_application', id=card.id) }}">
+                        <button class="delete-button" type="submit">Delete</button>
+                    </form>
+                    <form method="dialog">
+                            <button class="cancel-button" type="submit">Cancel</button>
+                    </form>
+                </div>
+            </dialog>
             {% else %}
                 <div class = "empty-applications">
                         <h1>No applications yet</h1>
