@@ -198,7 +198,14 @@ body {
     align-items: center;
 }
 
-.application-cards .edit-delete-buttons button {
+.application-cards .card-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    justify-content: space-between;
+}
+
+.application-cards .edit-delete-buttons button, .editappbtn {
     color: #000;
     border: 2px solid #000;
     display: flex;
@@ -206,7 +213,7 @@ body {
     justify-content: center;
 }
 
-.application-cards .edit-delete-buttons button:hover {
+.application-cards .edit-delete-buttons button:hover, .editappbtn:hover {
     background-color: #FFF2EF;
     color: #AE1800;
     border: 2px solid #000;
@@ -310,6 +317,8 @@ body {
 .add-application-form .cancel {
     color: #EC3013;
     font-weight: bold;
+    padding-top: 10px;
+    text-decoration: none;
 }
 
 /* Table Desgin */

@@ -1,0 +1,52 @@
+{% macro application_form(action_url, submit_label, application=None) %}
+            <form method="post" action="{{ action_url }}">
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="e.g. Northwind Analytics" value="{{ application.company or '' }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" name="role" placeholder="e.g. Data Analyst Intern"  value="{{ application.role or '' }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" placeholder="e.g. Remote/London" value="{{ application.location or '' }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="job_url">Job URL</label>
+                    <input type="text" id="job_url" name="job_url" placeholder="https://" value="{{ application.job_url or '' }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" id="deadline" name="deadline" value="{{ application.deadline or None }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    {% set statuses = ["Saved", "Applied", "Online Assessment", "Interview", "Offer", "Rejected", "Withdrawn"] %}
+                    <select id="status" name="status" required>
+                        {% for status in statuses %}
+                            <option value="{{ status }}" {% if application.status == status %}selected{% endif %}>{{ status }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group full-width">
+                    <label for="job_desc">Job Description</label>
+                    <textarea id="job_desc" name="job_desc" placeholder="Paste the job description here" rows="5">{{ application.job_desc or '' }}</textarea>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="notes">Notes</label>
+                    <textarea id="notes" name="notes" placeholder="Anything worth remembering - referral, recruiter name, next step" rows="5">{{ application.notes or '' }}</textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="save-application">{{ submit_label }}</button>
+                    <a class="cancel" href="{{ url_for('applications') }}">Cancel</a>
+                </div>
+            </form>
+            {% endmacro %}

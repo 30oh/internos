@@ -4,16 +4,15 @@
 
     <section class = "main-add-application-section">
         <div class = "container">
-            <p class = "new-entry">NEW ENTRY</p>
-            <h1>Add Application</h1>
+            <p class = "new-entry">EDIT ENTRY</p>
+            <h1>Edit Application</h1>
         </div>
     </section>
 
     <section class = "add-application-form">
         <div class = "container">
             {% from "_macros.html" import application_form %}
-            {% from "_macros.html" import application_form %}
-            {{ application_form(url_for('add_application'), 'Save Application') }}
+            {{ application_form(url_for('edit_application', id=application.id), 'Save changes', application) }}
         </div>
     </section>
 

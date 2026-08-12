@@ -33,6 +33,27 @@ def delete_application(id):
     return redirect(url_for("applications"))
 
 
+@app.route("/applications/<int:id>/edit", methods=["GET", "POST"])
+def edit_application(id):
+    application = db.get_or_404(Application, id)
+    if request.method == "POST":
+        deadline_raw = request.form.get("deadline")
+        deadline = date.fromisoformat(deadline_raw) if deadline_raw else None
+
+        application.company = request.form.get("company")
+        application.role = request.form.get("role")
+        application.location = request.form.get("location")
+        application.job_url = request.form.get("job_url")
+        application.deadline = deadline
+        application.status = request.form.get("status")
+        application.job_desc = request.form.get("job_desc")
+        application.notes = request.form.get("notes")
+        db.session.commit()
+        flash('Edited', "success")
+        return redirect(url_for('applications'))
+    return render_template("edit_application.html", application = application)
+
+
 @app.route("/add-application", methods=["GET", "POST"])
 def add_application():
     if request.method == "POST":
