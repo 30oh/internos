@@ -391,9 +391,21 @@ body {
     padding: 5px 14px;
 }
 
-.application-cards .table-status .status-date{
+.application-cards .table-status .status-date {
     display: flex;
     justify-content: space-between;
+}
+
+.application-cards .table-status .status-dropdown select {
+    border: 1px solid #4a4a4a;
+    padding: 5px 12px;
+    font-size: 14px;
+    background-color: #F8F4F4;
+    background-image: url("../icons/dropdown-arrow-icon.svg");
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    background-size: 22px;
+    padding-right: 36px;
 }
 
 .application-cards dialog table {

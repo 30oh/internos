@@ -32,6 +32,14 @@ def delete_application(id):
     flash('Deleted', "success")
     return redirect(url_for("applications"))
 
+@app.route("/applications/<int:id>/status", methods=["POST"])
+def change_status(id):
+    application = db.get_or_404(Application, id)
+    application.status = request.form.get("status")
+    db.session.commit()
+    flash('Status updated', "success")
+    return redirect(url_for("applications"))
+
 
 @app.route("/applications/<int:id>/edit", methods=["GET", "POST"])
 def edit_application(id):

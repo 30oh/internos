@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "_macros.html" import status_select %}
 
 {% block content %}
 <main>
@@ -73,8 +74,10 @@
                         <tr class = "table-status">
                             <td>
                                 <div class = "status-date">
-                                    <p class = "status">{{card.status}}</p>
-                                    <p class = "date">{{card.deadline}}</p>
+                                    <form class = "status-dropdown" method="post" action="{{ url_for('change_status', id=card.id) }}">
+                                        {{ status_select(card.status, True) }}
+                                    </form>
+                                    <p class = "date">Due {{card.deadline}}</p>
                                 </div>
                             </td>
                         </tr>
